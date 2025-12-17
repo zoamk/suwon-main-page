@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         4: '청년지원'
     };
 
-    const buttons = Array.from(document.querySelectorAll('.my-tab-btn'));
+    const buttons = Array.from(document.querySelectorAll('.nav-link'));
     const titleEl = document.getElementById('my-tab-title');
     const wrapper = document.getElementById('my-sections-wrapper');
     if (!wrapper || buttons.length === 0 || !titleEl) return;
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buttons.forEach(btn => {
             const btnIndex = Number(btn.getAttribute('data-index'));
             btn.classList.toggle('active', btnIndex === index);
+            btn.setAttribute('aria-current', btnIndex === index ? 'page' : 'false');
         });
 
         titleEl.textContent = titles[index] || '';

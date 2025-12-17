@@ -12,13 +12,19 @@
 
 .my-tab-group {
     gap: 0.5rem;
+    border-bottom: 2px solid #e3eaf4;
+    margin-bottom: 0;
     display: flex;
     align-items: flex-end;
 }
-.my-tab-btn {
+.my-tab-group .nav-item {
+    margin-bottom: -2px;
+}
+.my-tab-btn.nav-link {
     background: #fff;
     color: #1565c0;
     border: 2px solid #1565c0;
+    border-bottom: none;
     border-radius: 0.25rem 0.25rem 0 0;
     font-weight: 600;
     font-size: 1rem;
@@ -26,20 +32,21 @@
     transition: background 0.2s, color 0.2s, border 0.2s;
     box-shadow: none;
     outline: none;
-    margin-right: -2px;
+    margin-right: 0.25rem;
+    z-index: 1;
 }
 .my-tab-btn:last-child {
     margin-right: 0;
 }
-.my-tab-btn.active,
-.my-tab-btn:focus,
-.my-tab-btn:hover {
+.my-tab-btn.nav-link.active,
+.my-tab-btn.nav-link:focus,
+.my-tab-btn.nav-link:hover {
     background: #1565c0;
     color: #fff;
-    border-color: #1565c0;
+    border-color: #1565c0 #1565c0 #fff #1565c0;
     z-index: 2;
 }
-.my-tab-btn:not(.active) {
+.my-tab-btn.nav-link:not(.active) {
     z-index: 1;
 }
 
@@ -57,4 +64,13 @@
     margin-bottom: 1.5rem;
     background: #fafdff;
     box-shadow: 0 2px 8px 0 rgba(21,101,192,0.04);
+}
+
+/* Remove Bootstrap underline and rounded corners for nav-tabs */
+.nav-tabs {
+    border-bottom: none;
+}
+.nav-tabs .nav-link {
+    border-radius: 0.25rem 0.25rem 0 0;
+    border-bottom: none;
 }
