@@ -9,3 +9,52 @@
     # 수정자 : -
     # 작업내용 : -
  */
+
+.my-tab-group {
+    gap: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+}
+.my-tab-btn {
+    background: #fff;
+    color: #1565c0;
+    border: 2px solid #1565c0;
+    border-radius: 0.25rem 0.25rem 0 0;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: none;
+    outline: none;
+    margin-right: -2px;
+}
+.my-tab-btn:last-child {
+    margin-right: 0;
+}
+.my-tab-btn.active,
+.my-tab-btn:focus,
+.my-tab-btn:hover {
+    background: #1565c0;
+    color: #fff;
+    border-color: #1565c0;
+    z-index: 2;
+}
+.my-tab-btn:not(.active) {
+    z-index: 1;
+}
+
+#my-tab-title {
+    margin-left: 1.5rem;
+    color: #1565c0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* 섹션 간 여백 조정 (선택사항) */
+#my-sections-wrapper > .d-flex {
+    border: 1.5px solid #e3eaf4;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: #fafdff;
+    box-shadow: 0 2px 8px 0 rgba(21,101,192,0.04);
+}
