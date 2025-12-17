@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/*
+    # 프로젝트명 : 수원시청 페이지 리뉴얼
+    # 파일설명 : 수원시청 페이지 리뉴얼 css
+    # 파일버전 : 1.0.0
+    # 생성일 : 2025.12.11
+    # 생성자 : 신주현
+    # 수정일 : -
+    # 수정자 : -
+    # 작업내용 : -
+ */
+
+.my-tab-group {
+    gap: 0.5rem;
+    border-bottom: 2px solid #e3eaf4;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+}
+.my-tab-group .nav-item {
+    margin-bottom: -2px;
+}
+.my-tab-btn.nav-link {
+    background: #fff;
+    color: #1565c0;
+    border: 2px solid #1565c0;
+    border-bottom: none;
+    border-radius: 0.25rem 0.25rem 0 0;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: none;
+    outline: none;
+    margin-right: 0.25rem;
+    z-index: 1;
+}
+.my-tab-btn:last-child {
+    margin-right: 0;
+}
+.my-tab-btn.nav-link.active,
+.my-tab-btn.nav-link:focus,
+.my-tab-btn.nav-link:hover {
+    background: #1565c0;
+    color: #fff;
+    border-color: #1565c0 #1565c0 #fff #1565c0;
+    z-index: 2;
+}
+.my-tab-btn.nav-link:not(.active) {
+    z-index: 1;
+}
+
+#my-tab-title {
+    margin-left: 1.5rem;
+    color: #1565c0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* 섹션 간 여백 조정 (선택사항) */
+#my-sections-wrapper > .d-flex {
+    border: 1.5px solid #e3eaf4;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: #fafdff;
+    box-shadow: 0 2px 8px 0 rgba(21,101,192,0.04);
+}
+
+/* Remove Bootstrap underline and rounded corners for nav-tabs */
+.nav-tabs {
+    border-bottom: none;
+}
+.nav-tabs .nav-link {
+    border-radius: 0.25rem 0.25rem 0 0;
+    border-bottom: none;
+}
