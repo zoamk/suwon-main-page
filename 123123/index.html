@@ -45,6 +45,21 @@
             height: 400px;
             /* 푸터 높이에 맞게 조정 */
         }
+
+        /* 반응형 이미지 */
+        .my-section-img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            margin: 0.5rem;
+        }
+
+        @media (max-width: 576px) {
+            .my-section-img {
+                max-width: 140px;
+                margin: 0.25rem auto;
+            }
+        }
     </style>
     <script>
         // iframe 높이 자동 조절
@@ -58,25 +73,25 @@
     <div id="wrap">
 
         <!-- 헤더 iframe -->
-        <iframe id="header-frame" src="header.html" onload="resizeIframe(this)" scrolling="no"></iframe>
+        <iframe id="header-frame" src="header.html" onload="resizeIframe(this)" scrolling="no" class="mb-2"></iframe>
 
         <!-- 컨테이너 영역 -->
-        <div id="container" style="height: 500px;">
+        <div id="container" class="container-fluid px-2 px-sm-3 pt-2 pt-sm-4" style="height:auto;">
             <!-- 메인 -->
-           <!-- 탭 컨트롤 (1~4) -->
-            <div class="d-flex justify-content-center align-items-end my-tab-outer" style="margin-bottom:0;">
-                <ul class="nav nav-tabs my-tab-group" role="tablist" aria-label="서비스 탭">
-                    <li class="nav-item">
-                        <button type="button" class="nav-link my-tab-btn active" data-index="1" aria-current="page">자주찾는 서비스</button>
+            <!-- 탭 컨트롤 (1~4) -->
+            <div class="container-fluid px-0">
+                <ul class="nav nav-tabs my-tab-group row row-cols-2 row-cols-md-4 g-1 g-md-2 w-100 mx-0" role="tablist" aria-label="서비스 탭">
+                    <li class="nav-item col px-1 px-md-0" style="flex:1 1 0;min-width:0;">
+                        <button type="button" class="nav-link my-tab-btn active w-100 py-3 py-md-2 fs-5 fs-md-6" data-index="1" aria-current="page">자주찾는 서비스</button>
                     </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link my-tab-btn" data-index="2">생활정보</button>
+                    <li class="nav-item col px-1 px-md-0" style="flex:1 1 0;min-width:0;">
+                        <button type="button" class="nav-link my-tab-btn w-100 py-3 py-md-2 fs-5 fs-md-6" data-index="2">생활정보</button>
                     </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link my-tab-btn" data-index="3">맞춤복지</button>
+                    <li class="nav-item col px-1 px-md-0" style="flex:1 1 0;min-width:0;">
+                        <button type="button" class="nav-link my-tab-btn w-100 py-3 py-md-2 fs-5 fs-md-6" data-index="3">맞춤복지</button>
                     </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link my-tab-btn" data-index="4">청년지원</button>
+                    <li class="nav-item col px-1 px-md-0" style="flex:1 1 0;min-width:0;">
+                        <button type="button" class="nav-link my-tab-btn w-100 py-3 py-md-2 fs-5 fs-md-6" data-index="4">청년지원</button>
                     </li>
                 </ul>
             </div>
@@ -85,419 +100,453 @@
             </div>
             <!-- //탭 컨트롤 (1~4) -->
 
-            <!-- 자주찾는 서비스 -->
+            <!-- 서비스 섹션 전체 Bootstrap row/col로 변경 -->
             <div id="my-sections-wrapper">
-                <div class="d-flex justify-content-center gap-2 p-5">
-                    <img src="resources/img/my/suwonperson_service01.png" alt="suwonperson_service01"
-                        height="150px" width="200px" class="p-1 m-3">
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">조직도</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">불법주정차</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">통계(데이터 포털)</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">대형폐기물</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">수원시 지역화폐</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                <!-- 자주찾는 서비스 -->
+                <div class="row g-2 py-4 justify-content-center align-items-start">
+                    <div class="col-12 col-sm-3 d-flex justify-content-center mb-3 mb-sm-0">
+                        <img src="resources/img/my/suwonperson_service01.png" alt="suwonperson_service01" class="img-fluid my-section-img">
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">채용정보</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">민원신청</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">여권민원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">세금안내</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">마을변호사</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-2 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">조직도</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">불법주정차</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">통계(데이터 포털)</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">대형폐기물</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">수원시 지역화폐</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">기업일자리</h6>
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">칭찬합니다</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">수원관광</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">신청접수</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">고향사랑기부제</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-2 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">채용정보</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">민원신청</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">여권민원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">세금안내</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">마을변호사</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">새빛이음</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">통합예약</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">기업유치</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">수원수목원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">수원시민 안전보험</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-2 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">기업일자리</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">칭찬합니다</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">수원관광</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">신청접수</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">고향사랑기부제</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">새빛이음</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">통합예약</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">기업유치</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">수원수목원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">수원시민 안전보험</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- //자주찾는 서비스 -->
                 <!-- 생활정보 -->
-                <div class="d-flex justify-content-center gap-2 p-5">
-                    <img src="resources/img/my/suwonperson_service02.png" alt="suwonperson_service02"
-                        height="150px" width="200px" class="p-1 m-3">
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">아동수당</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">아동친화도시</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">장애인활동지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                <div class="row g-2 py-4 justify-content-center align-items-start d-none">
+                    <div class="col-12 col-sm-3 d-flex justify-content-center mb-3 mb-sm-0">
+                        <img src="resources/img/my/suwonperson_service02.png" alt="suwonperson_service02" class="img-fluid my-section-img">
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">여성안전도시</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">외국인주민생활안내서</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">한아름콜택시(교통약자택시)</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">아동수당</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">아동친화도시</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">장애인활동지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">임신출산장려지원</h6>
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group- item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">노인돌봄서비스</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">여성안전도시</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">외국인주민생활안내서</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">한아름콜택시(교통약자택시)</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">임신출산장려지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">노인돌봄서비스</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- //생활정보 -->
                 <!-- 맞춤복지 -->
-                <div class="d-flex justify-content-center gap-2 p-5">
-                    <img src="resources/img/my/suwonperson_service03.png" alt="suwonperson_service03"
-                        height="150px" width="200px" class="p-1 m-3">
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">임신 출산 진료비 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">임산부 및 예비 신혼부부 검사 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">유축기 대여 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
-
+                <div class="row g-2 py-4 justify-content-center align-items-start d-none">
+                    <div class="col-12 col-sm-3 d-flex justify-content-center mb-3 mb-sm-0">
+                        <img src="resources/img/my/suwonperson_service03.png" alt="suwonperson_service03" class="img-fluid my-section-img">
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">난임부부 시술비 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">임산부 우물 선별검사 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">산모 신생아 건강관리 지원</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">임신 출산 진료비 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">임산부 및 예비 신혼부부 검사 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">유축기 대여 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">고위험 임산부 의료비 지원</h6>
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">영양플러스 사업</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">첫만남이용권</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">난임부부 시술비 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">임산부 우물 선별검사 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">산모 신생아 건강관리 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">고위험 임산부 의료비 지원</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">영양플러스 사업</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">첫만남이용권</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- //맞춤복지 -->
                 <!-- 청년지원 -->
-                <div class="d-flex justify-content-center gap-2 p-5">
-                    <img src="resources/img/my/suwonperson_service04.png" alt="suwonperson_service04"
-                        height="150px" width="200px" class="p-1 m-3">
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">청나래</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">청정마음건강센터</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">수원청년 참여프로그램</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                <div class="row g-2 py-4 justify-content-center align-items-start d-none">
+                    <div class="col-12 col-sm-3 d-flex justify-content-center mb-3 mb-sm-0">
+                        <img src="resources/img/my/suwonperson_service04.png" alt="suwonperson_service04" class="img-fluid my-section-img">
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">월세지원사업</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">청년단기숙소 새빛호스텔</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">커뮤니티</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">청나래</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">청정마음건강센터</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">수원청년 참여프로그램</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="list-group"> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">새빛청년상담소</h6>
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">공간대관</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a> <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                            aria-current="true">
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0">청년정책 통합검색</h6>
-
-                                </div> <small class="opacity-50 text-nowrap">-></small>
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">월세지원사업</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">청년단기숙소 새빛호스텔</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">커뮤니티</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="list-group gap-2 gap-md-0">
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">새빛청년상담소</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">공간대관</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 py-md-2 fs-6 fs-md-6" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0 fs-6 fs-md-6">청년정책 통합검색</h6>
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">-></small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- //청년지원 -->
@@ -506,7 +555,7 @@
         </div>
 
         <!-- 푸터 iframe -->
-        <iframe id="footer-frame" src="footer.html" onload="resizeIframe(this)" scrolling="no"></iframe>
+        <iframe id="footer-frame" src="footer.html" onload="resizeIframe(this)" scrolling="no" class="mt-2"></iframe>
     </div>
 
     <!-- 스크립트 : 라이브러리 -->

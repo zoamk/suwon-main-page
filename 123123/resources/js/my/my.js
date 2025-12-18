@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.getElementById('my-sections-wrapper');
     if (!wrapper || buttons.length === 0 || !titleEl) return;
 
-    // 섹션 요소들(탭으로 제어할 4개 블록) — wrapper의 직계 자식 중 d-flex 클래스를 가진 것들로 간주
-    const sections = Array.from(wrapper.children).filter(el => el.classList && el.classList.contains('d-flex'));
+    // 섹션 요소들(탭으로 제어할 4개 블록) — wrapper의 직계 자식 중 row 클래스를 가진 것들로 간주
+    const sections = Array.from(wrapper.children).filter(el => el.classList && el.classList.contains('row'));
 
     function showTab(index) {
         // index는 1~4
